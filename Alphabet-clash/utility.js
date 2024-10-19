@@ -20,6 +20,16 @@ function setTextElementById(element, value) {
     element1.innerText = value;
 }
 
+function bgColorRemove() {
+    document.getElementById()
+}
+
+// Remove background color
+// function removeBgColor(color) {
+//     const removeBgColor = document.getElementById()
+// }
+
+
 // function randomNumber() {
 //     const alphabetString = "abcdefghijklmnopqrstuvwxyz";
 //     const alphabet = alphabetString.split("");

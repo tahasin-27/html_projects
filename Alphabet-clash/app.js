@@ -3,11 +3,14 @@ function play() {
     console.log("play game");
 
     addElementById("home_screen");
-    // addElementById("final_score");
+    addElementById("final_score");
 
     // playground section
     removeElementById("play_ground");
-    // setTextElementById("current_life", 5);
+    setTextElementById("current_life", 5);
+    setTextElementById("current_score", 0);
+
+    document.getElementById
 
     // creata a alphabet string
     const alphabetString = "abcdefghijklmnopqrstuvwxyz";
@@ -17,17 +20,18 @@ function play() {
     // get a random number
     const randomNumber = Math.random() * 25;
     const index = Math.round(randomNumber);
-    console.log(index);
+    console.log("idx: ", index);
 
     const randomIndex = alphabet[index];
-    console.log(randomIndex);
+    console.log("random idx: ", randomIndex);
 
-    
+
 
     const currentAlphabet = document.getElementById("current_alphabet");
     var lowerAlphabet = currentAlphabet.innerText = randomIndex.toUpperCase();
+    console.log("lower Alphabet: ", lowerAlphabet);
 
-    
+
 
     const keyboardColor = document.getElementById(randomIndex);
     keyboardColor.classList.add("bg-red-400");
@@ -44,7 +48,7 @@ function play() {
         console.log("expecterd alphabet: ", expectedAlplhabet)
 
 
-        if(playerGame === expectedAlplhabet) {
+        if (playerGame === expectedAlplhabet) {
             console.log("You won the game");
 
             const alphabetString = "abcdefghijklmnopqrstuvwxyz";
@@ -61,6 +65,7 @@ function play() {
 
             const keyboardColor = document.getElementById(randomIndex);
             keyboardColor.classList.add("bg-red-400");
+        
 
             const removekeyboardColor = document.getElementById(expectedAlplhabet);
             removekeyboardColor.classList.remove("bg-red-400");
@@ -73,7 +78,7 @@ function play() {
             setTextElementById("current_score", updatedLife);
 
             setTextElementById("finalScore", updatedLife);
-            
+
 
         }
 
@@ -90,9 +95,11 @@ function play() {
 
             const currentAlphabet = document.getElementById("current_alphabet");
             const lowerAlphabet = currentAlphabet.innerText = randomIndex.toUpperCase();
-            
+
             const keyboardColor = document.getElementById(randomIndex);
-            keyboardColor.classList.add("bg-red-400")
+            // console.log("not removing: ", keyboardColor)
+            keyboardColor.classList.add("bg-red-400");
+
 
             const removekeyboardColor = document.getElementById(expectedAlplhabet);
             removekeyboardColor.classList.remove("bg-red-400");
@@ -102,13 +109,26 @@ function play() {
             const updatedLife = currentLife - 1;
             setTextElementById("current_life", updatedLife);
 
-            if(updatedLife === 0) {
-                console.log("Game Over")
+            if (updatedLife === 0) {
+                console.log("Game Over");
 
+                // document.getElementById(keyboardColor).classList.remove("bg-red-400");
+
+                // document.getElementById()
+
+                // addElementById("play_ground");
                 addElementById("play_ground");
 
+                // removeElementById("final_score");
                 removeElementById("final_score");
-            }
+
+                const lastScore = getTextElementById("current_score");
+                console.log("last_score: ", lastScore);
+
+
+
+
+            }           
         }
     }
     document.addEventListener("keyup", handleKeyBrdBtn)
